@@ -20,16 +20,21 @@ if ($result->num_rows == 1) {
         // Password correct, set session variables
         $_SESSION['user_id'] = $row['user_id'];
         $_SESSION['name'] = $row['name'];
-        header("Location: dashboard.php"); // Redirect to dashboard or homepage
+        $_SESSION['email'] = $row['email'];
+        echo "<script>alert('You have been logged in successfully.');
+            self.location.href='dashboard.php';
+            </script>";
         exit();
     } else {
-        $_SESSION['error'] = "Incorrect password.";
-        header("Location: login.php");
+        echo "<script>alert('Your password is wrong.');
+            self.location.href='login.php';
+            </script>";
         exit();
     }
 } else {
-    $_SESSION['error'] = "No account found with that email.";
-    header("Location: login.php");
+        echo "<script>alert('No account found with that email.');
+                self.location.href='login.php';
+                </script>";
     exit();
 }
 
