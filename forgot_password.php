@@ -1,6 +1,17 @@
 <?php
+ini_set('display_errors', 1);
+error_reporting(E_ALL);
+
 session_start();
 require_once 'db.php';
+require 'vendor/autoload.php'; // Composer로 설치한 경우
+
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\Exception;
+
+// Load .env
+$dotenv = Dotenv\Dotenv::createImmutable(__DIR__);
+$dotenv->load();
 
 if($_SERVER['REQUEST_METHOD'] === 'POST'){
     $email = $_POST['email'];
@@ -13,19 +24,48 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
     $result = $stmt->get_result();
 
     if($result->num_rows == 1){
-        // Generate new temporary password
-        $temp_password = substr(str_shuffle("0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"), 0, 8);
-        $hashed_password = password_hash($temp_password, PASSWORD_DEFAULT);
+        // Generate token and expiry
+        $token = bin2hex(random_bytes(50));
+        date_default_timezone_set('Asia/Kuala_Lumpur');
+        $expiry = date("Y-m-d H:i:s", strtotime('+1 hour'));
 
-        // Update password in database
-        $sql_update = "UPDATE users SET password = ? WHERE email = ?";
+
+
+        // Store in database
+        $sql_update = "UPDATE users SET reset_token = ?, reset_token_expiry = ? WHERE email = ?";
         $stmt_update = $conn->prepare($sql_update);
-        $stmt_update->bind_param("ss", $hashed_password, $email);
-        if($stmt_update->execute()){
-            $_SESSION['success'] = "Your new password is: <strong>".$temp_password."</strong><br>Please login and change it immediately.";
-        } else {
-            $_SESSION['error'] = "Error updating password. Please try again.";
+        $stmt_update->bind_param("sss", $token, $expiry, $email);
+        $stmt_update->execute();
+
+        // Send reset link via email
+        $mail = new PHPMailer(true);
+        try {
+            $mail->isSMTP();
+            $mail->Host = 'smtp.gmail.com';
+            $mail->SMTPAuth = true;
+            $mail->Username = $_ENV['SMTP_USER'];
+            $mail->Password = $_ENV['SMTP_PASS'];
+            $mail->SMTPSecure = 'tls';
+            $mail->Port = 587;
+
+            $mail->setFrom($_ENV['SMTP_USER'], 'BudgetBuddy Support');
+            $mail->addAddress($email);
+
+            $reset_link = "http://localhost:8080/BudgetBuddy/reset_password.php?token=".$token;
+
+            $mail->isHTML(true);
+            $mail->Subject = 'BudgetBuddy Password Reset Link';
+            $mail->Body    = "Hello,<br><br>Click the link below to reset your password:<br>
+                              <a href='$reset_link'>$reset_link</a><br><br>
+                              This link will expire in 1 hour.<br><br>
+                              Regards,<br>BudgetBuddy Team";
+
+            $mail->send();
+            $_SESSION['success'] = "A password reset link has been sent to your email.";
+        } catch (Exception $e) {
+            $_SESSION['error'] = "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
         }
+
     } else {
         $_SESSION['error'] = "Email not found.";
     }
@@ -57,7 +97,6 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
     <form action="forgot_password.php" method="POST">
         <label>Enter your registered email:</label><br>
         <input type="email" name="email" required><br><br>
-
         <input type="submit" value="Reset Password">
     </form>
 

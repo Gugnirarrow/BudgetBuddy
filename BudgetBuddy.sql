@@ -6,7 +6,9 @@ CREATE TABLE users (
     name VARCHAR(100) NOT NULL,
     email VARCHAR(100) NOT NULL UNIQUE,
     password VARCHAR(255) NOT NULL,
-    created_at DATETIME DEFAULT CURRENT_TIMESTAMP
+    created_at DATETIME DEFAULT CURRENT_TIMESTAMP,
+    reset_token VARCHAR(255),
+    reset_token_expiry DATETIME
 );
 
 CREATE TABLE categories (
@@ -60,3 +62,4 @@ CREATE TABLE suggestions (
     content VARCHAR(255) NOT NULL,
     FOREIGN KEY (category_id) REFERENCES categories(category_id)
 );
+
