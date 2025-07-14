@@ -1,7 +1,13 @@
 <?php
 session_start();
 require_once 'db.php';
-;
+
+// Check if terms checkbox is checked
+if (!isset($_POST['terms'])) {
+    $_SESSION['error'] = "You must agree to the Terms & Conditions.";
+    header("Location: register.php");
+    exit();
+}
 
 // Get POST data
 $name = trim($_POST['name']);
