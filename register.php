@@ -75,20 +75,19 @@ session_start();
                 color: #f8f8f8; background-color: #555ccf; width: 580px; height: 64px; border-radius: 10px; font-size: 24px; font-weight: 700; cursor: pointer;">
                 Sign up
               </button>
+
+              <div class="i-agree-to-become-a">
+                <input type="checkbox" id="termsCheckbox" name="terms" style="width: 35px; height: 35px;">
+                <label for="termsCheckbox">
+                <span class="text-wrapper-11">I agree to become a Budget Buddy member and have read and accepted the </span>
+                <span class="text-wrapper-12"><a href="#">Terms & Conditions</a></span>
+                <span class="text-wrapper-11">.</span>
+                </label>
+            </div>
             </form>
 
             <div class="text-wrapper-6">Join Us Today!</div>
             <p class="p">Hey buddy, let’s manage your money!</p>
-
-            <div class="i-agree-to-become-a">
-            <input type="checkbox" id="termsCheckbox" name="terms" style="width: 35px; height: 35px;">
-            <label for="termsCheckbox">
-                <span class="text-wrapper-11">I agree to become a Budget Buddy member and have read and accepted the </span>
-                <span class="text-wrapper-12"><a href="#">Terms & Conditions</a></span>
-                <span class="text-wrapper-11">.</span>
-            </label>
-            </div>
-
 
             <div class="social-login-divider-2">
                 <img src="img/line.png" alt="line" class="divider-line">
