@@ -59,7 +59,21 @@ if (isset($_SESSION['error'])) {
                 color: #f8f8f8; background-color: #555ccf; width: 583px; height: 64px; border-radius: 10px; font-size: 24px; font-weight: 700; cursor: pointer;">
                 Log in
               </button>
+
+              <!-- Forgot Password 링크 추가 -->
+              <a href="forgot_password.php" style="
+                position: absolute;
+                top: 670px; /* Log in 버튼 아래로 약 +70px 조정 */
+                left: 870px; /* 버튼의 오른쪽 하단에 맞춰 조정 */
+                font-family: 'Inter-Medium', Helvetica;
+                font-weight: 500;
+                color: #5d5bd8;
+                font-size: 20px;
+                text-decoration: underline;">
+                Forgot Password?
+              </a>
             </form>
+
 
             <?php if (!empty($error)) : ?>
               <p style="color: red; position: absolute; top: 750px; left: 600px;"><?php echo $error; ?></p>
