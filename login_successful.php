@@ -20,7 +20,10 @@ session_start();
             <form action="dashboard.php">
               <div class="rectangle-2"></div>
 
-              <button type="submit"
+                <script src="https://unpkg.com/@lottiefiles/dotlottie-wc@0.6.2/dist/dotlottie-wc.js" type="module"></script>
+                <dotlottie-wc src="https://lottie.host/da512a67-a067-4144-ae7c-841b27a054f0/W5ArsvB0qd.lottie" style="width: 1450px;height: 530px;" speed="1" autoplay loop></dotlottie-wc>
+              
+                <button type="submit"
                 class="text-wrapper-6"
                 style="position: absolute; top: 540px; left: 620px; background: none; border: none;
                 color: #f8f8f8; background-color: #1F1D70; width: 250px; height: 64px; border-radius: 10px; font-size: 24px; font-weight: 700; cursor: pointer;">
@@ -32,7 +35,8 @@ session_start();
             <p class="p" style="left: 570px; top: 480px">Hey buddy, let’s manage your money!</p>
           </div>
 
-          <img class="https-lottiefiles" src="img/cat-signup.png" />
+          <script src="https://unpkg.com/@lottiefiles/dotlottie-wc@0.6.2/dist/dotlottie-wc.js" type="module"></script>
+          <dotlottie-wc src="https://lottie.host/b56a8311-2531-44d9-9f57-b9e838b53e44/rIXUYhZNJW.lottie" class="https-lottiefiles" speed="1" autoplay loop></dotlottie-wc>
         </div>
 
         <div class="group-2">

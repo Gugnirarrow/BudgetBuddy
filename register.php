@@ -121,7 +121,8 @@ session_start();
 
           </div>
 
-          <img class="https-lottiefiles" src="img/cat-signup.png" />
+          <script src="https://unpkg.com/@lottiefiles/dotlottie-wc@0.6.2/dist/dotlottie-wc.js" type="module"></script>
+          <dotlottie-wc src="https://lottie.host/b56a8311-2531-44d9-9f57-b9e838b53e44/rIXUYhZNJW.lottie" class="https-lottiefiles" speed="1" autoplay loop></dotlottie-wc>
         </div>
 
         <div class="group-2">

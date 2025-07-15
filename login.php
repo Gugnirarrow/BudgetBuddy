@@ -110,7 +110,19 @@ if (isset($_SESSION['error'])) {
             </p>
           </div>
 
-          <img class="https-lottiefiles" src="img/cat-login.png" alt="Cat working" />
+          <script
+            src="https://unpkg.com/@lottiefiles/dotlottie-wc@0.6.2/dist/dotlottie-wc.js"
+            type="module"
+          ></script>
+
+          <dotlottie-wc
+            src="https://lottie.host/4ae57ffc-29a5-4ae3-9a5e-51ab5c399731/rmYTiXuHkF.lottie"
+            class="https-lottiefiles"
+            speed="1"
+            autoplay
+            loop
+          ></dotlottie-wc>
+
         </div>
 
         <div class="group-2">
