@@ -21,9 +21,10 @@ if ($result->num_rows == 1) {
         $_SESSION['user_id'] = $row['user_id'];
         $_SESSION['name'] = $row['name'];
         $_SESSION['email'] = $row['email'];
-        echo "<script>alert('You have been logged in successfully.');
-            self.location.href='dashboard.php';
-            </script>";
+        echo "<script>
+            self.location.href='login_successful.php';
+            </script>
+            ";
         exit();
     } else {
         echo "<script>alert('Your password is wrong.');

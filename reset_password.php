@@ -63,7 +63,7 @@ if(isset($_GET['token'])){
               <button type="submit"
                 class="text-wrapper-5"
                 style="position: absolute; top: 500px; left: 446px; background: none; border: none;
-                color: #f8f8f8; background-color: #555ccf; width: 583px; height: 64px; border-radius: 10px; font-size: 24px; font-weight: 700; cursor: pointer;">
+                color: #f8f8f8; background-color: #1F1D70; width: 583px; height: 64px; border-radius: 10px; font-size: 24px; font-weight: 700; cursor: pointer;">
                 Change Password
               </button>
             </form>

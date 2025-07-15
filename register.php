@@ -72,7 +72,7 @@ session_start();
               <button type="submit"
                 class="text-wrapper-6"
                 style="position: absolute; top: 750px; left: 450px; background: none; border: none;
-                color: #f8f8f8; background-color: #555ccf; width: 580px; height: 64px; border-radius: 10px; font-size: 24px; font-weight: 700; cursor: pointer;">
+                color: #f8f8f8; background-color: #1F1D70; width: 580px; height: 64px; border-radius: 10px; font-size: 24px; font-weight: 700; cursor: pointer;">
                 Sign up
               </button>
 
