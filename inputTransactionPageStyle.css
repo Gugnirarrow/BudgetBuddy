@@ -1,0 +1,269 @@
+@charset "UTF-8";
+.layout {
+  display: flex;        
+  min-height: 100vh;    
+}
+
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+}
+.sidebar {
+    width: 300px;
+    background-color: #FFFFFF;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-right: 1px solid #eee; /* Added for separation */
+}
+
+.sidebar .logo {
+    margin-bottom: 40px;
+}
+
+.sidebar .logo img {
+    width: 200px;
+}
+
+.sidebar .navigation {
+    width: 100%;
+}
+
+.sidebar .navigation ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.sidebar .navigation li {
+    margin-bottom: 55px;
+}
+
+.sidebar .navigation .nav-item {
+    display: block;
+    padding: 10px 20px;
+    text-decoration: none;
+    color: #000;
+    font-weight: bold;
+    border-radius: 50px;
+    transition: background-color 0.3s;
+}
+
+.sidebar .navigation .nav-item:hover {
+    background-color: #e0e0e0;
+}
+
+.sidebar .navigation .nav-item.active {
+    background-color: #5D5BD8;
+    color: #FFF;
+}
+
+.sidebar .add-button {
+    margin-top: auto; 
+    margin-bottom: 20px;
+    cursor: pointer;
+}
+
+.sidebar .add-button img {
+    width: 60px;
+    height: 60px;
+}
+
+/*main-content*/
+
+.main-content {
+    flex: 1;
+    background-color: #6F5CC6;
+    padding: 40px;
+    color: white;
+    border-radius: 25px;
+    font-family: 'Poppins', sans-serif;
+	margin: 20px; 
+}
+
+.content-row {
+  display: flex;
+  gap: 50px;
+  align-items: flex-start;
+}
+
+.input-container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.input-container h2 {
+    font-size: 28px;
+    margin-bottom: 5px;
+	
+}
+
+.input-container p {
+    font-size: 16px;
+    margin-bottom: 30px;
+}
+
+
+.category-section label {
+    font-weight: bold;
+    font-size: 18px;
+    margin-bottom: 10px;
+    display: block;
+}
+
+.category-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 100px);
+    gap: 30px;
+    margin-bottom: 40px;
+	padding-top: 20px;
+}
+
+.category-grid img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: contain;
+}
+
+.form-section {
+    background: white;
+    color: #333;
+    border-radius: 15px;
+    padding: 30px;
+    width: 100%;
+    max-width: 400px;
+}
+
+.form-section label {
+    display: block;
+    margin-top: 15px;
+    margin-bottom: 8px;
+    font-weight: bold;
+}
+
+.form-section input[type="text"],
+.form-section input[type="date"] {
+    width: 100%;
+    padding: 10px;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    margin-bottom: 10px;
+}
+
+.type-buttons {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.type-btn {
+    flex: 1;
+    padding: 10px;
+    border: 2px solid #b5b5ff;
+    background-color: white;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: bold;
+    color: #6F5CC6;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.type-btn:hover {
+    background-color: #6F5CC6;
+    color: white;
+}
+
+.date-picker {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.date-picker img {
+    width: 24px;
+    height: 24px;
+}
+
+.action-buttons {
+    display: flex;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.finish-btn {
+    flex: 1;
+    background-color: #9a8eff;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    padding: 10px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.add-more-btn {
+    flex: 1;
+    background-color: #1e1a4f;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    padding: 10px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+
+/*footer*/
+
+.footer {
+    background-color: #C6C6FF;
+    padding: 20px 40px;
+    color: #000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap; /
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.email-subscribe {
+    flex-basis: 30%; 
+    text-align: left;
+    color:#6666CC;
+}
+
+.email-subscribe p {
+    margin: 5px 0;
+    font-size: 14px;
+}
+
+.email-subscribe input {
+    padding: 8px;
+    border: none;
+    border-radius: 34px;
+    margin-top: 10px;
+    width: 80%;
+}
+
+.footer-logo {
+    flex-basis: 30%; 
+    text-align: center;
+}
+
+.footer-logo img {
+    width: 200px;
+}
+
+.copyright {
+    flex-basis: 30%; 
+    text-align: right;
+    font-size: 12px;
+}

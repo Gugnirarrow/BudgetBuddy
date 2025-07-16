@@ -6,6 +6,11 @@ if (isset($_SESSION['error'])) {
     $error = $_SESSION['error'];
     unset($_SESSION['error']);
 }
+
+if (isset($_SESSION['success'])) {
+    $success = $_SESSION['success'];
+    unset($_SESSION['success']);
+}
 ?>
 
 <!DOCTYPE html>
@@ -16,6 +21,35 @@ if (isset($_SESSION['error'])) {
   <link rel="stylesheet" href="globals.css" />
   <link rel="stylesheet" href="style.css" />
   <title>BudgetBuddy Login</title>
+
+  <style>
+    .popup {
+      position: fixed;
+      top: 40%;
+      left: 50%;
+      width: 400px;
+      height: 200px;
+      transform: translate(-50%, -50%);
+      background-color: #C6C6FF;
+      border: 2px solid #5d5bd8;
+      padding: 70px 30px;
+      border-radius: 10px;
+      z-index: 9999;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+      text-align: center;
+      color: black;
+    }
+    .popup button {
+      margin-top: 20px;
+      font-size: 16px;
+      padding: 8px 15px;
+      background-color: white;
+      color: black;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+  </style>
 </head>
 <body style ="background-color: #5d5bd8;">
   <div class="login">
@@ -75,9 +109,7 @@ if (isset($_SESSION['error'])) {
             </form>
 
 
-            <?php if (!empty($error)) : ?>
-              <p style="color: red; position: absolute; top: 750px; left: 600px;"><?php echo $error; ?></p>
-            <?php endif; ?>
+
 
             <div class="text-wrapper-6">Welcome back!</div>
             <p class="p">Hey buddy, let’s manage your money!</p>
@@ -141,5 +173,27 @@ if (isset($_SESSION['error'])) {
       </div>
     </div>
   </div>
+
+<?php if (!empty($error)) : ?>
+    <div class="popup">
+      <p><?php echo $error; ?></p>
+      <button onclick="closePopup()">Close</button>
+    </div>
+  <?php endif; ?>
+
+  <?php if (isset($_SESSION['success'])) : ?>
+  <div class="popup">
+    <p><?php echo $_SESSION['success']; ?></p>
+    <button onclick="closePopup()">Close</button>
+  </div>
+  <?php unset($_SESSION['success']); ?>
+<?php endif; ?>
+
+  <script>
+  function closePopup() {
+    document.querySelectorAll('.popup').forEach(popup => popup.style.display = 'none');
+  }
+  </script>
+
 </body>
 </html>

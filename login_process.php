@@ -21,21 +21,17 @@ if ($result->num_rows == 1) {
         $_SESSION['user_id'] = $row['user_id'];
         $_SESSION['name'] = $row['name'];
         $_SESSION['email'] = $row['email'];
-        echo "<script>
-            self.location.href='login_successful.php';
-            </script>
-            ";
+        $_SESSION['success'] = "Login successful! Welcome back.";
+        header("Location: login_successful.php");
         exit();
     } else {
-        echo "<script>alert('Your password is wrong.');
-            self.location.href='login.php';
-            </script>";
+        $_SESSION['error'] = "Incorrect password. Please try again.";
+        header("Location: login.php");
         exit();
     }
 } else {
-        echo "<script>alert('No account found with that email.');
-                self.location.href='login.php';
-                </script>";
+        $_SESSION['error'] = "No account found with that email.";
+    header("Location: login.php");
     exit();
 }
 

@@ -55,17 +55,6 @@ while($row = $result->fetch_assoc()){
 <body>
     <h2><?php echo $edit_mode ? "Edit" : "Add"; ?> Transaction</h2>
 
-    <?php
-    if(isset($_SESSION['error'])){
-        echo "<p style='color:red;'>".$_SESSION['error']."</p>";
-        unset($_SESSION['error']);
-    }
-    if(isset($_SESSION['success'])){
-        echo "<p style='color:green;'>".$_SESSION['success']."</p>";
-        unset($_SESSION['success']);
-    }
-    ?>
-
     <form action="transaction_process.php" method="POST">
         <input type="hidden" name="transaction_id" value="<?php echo $transaction['transaction_id']; ?>">
 

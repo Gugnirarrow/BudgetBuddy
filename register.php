@@ -10,6 +10,35 @@ session_start();
   <title>Register - BudgetBuddy</title>
   <link rel="stylesheet" href="globals.css" />
   <link rel="stylesheet" href="style.css" />
+
+  <style>
+    .popup {
+      position: fixed;
+      top: 40%;
+      left: 50%;
+      width: 400px;
+      height: 200px;
+      transform: translate(-50%, -50%);
+      background-color: #C6C6FF;
+      border: 2px solid #5d5bd8;
+      padding: 70px 30px;
+      border-radius: 10px;
+      z-index: 9999;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+      text-align: center;
+      color: black;
+    }
+    .popup button {
+      margin-top: 20px;
+      font-size: 16px;
+      padding: 8px 15px;
+      background-color: white;
+      color: black;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+  </style>
 </head>
 <body style ="background-color: #7c8af1;">
   <div class="sign-up">
@@ -29,17 +58,6 @@ session_start();
               </div>
 
               <div class="rectangle-2"></div>
-
-              <?php
-              if(isset($_SESSION['error'])){
-                  echo "<p style='color:red; position:absolute; top:260px; left:450px;'>".$_SESSION['error']."</p>";
-                  unset($_SESSION['error']);
-              }
-              if(isset($_SESSION['success'])){
-                  echo "<p style='color:green; position:absolute; top:260px; left:450px;'>".$_SESSION['success']."</p>";
-                  unset($_SESSION['success']);
-              }
-              ?>
 
               <label for="name" class="text-wrapper-3">*Name</label>
               <input type="text" id="name" name="name" required
@@ -112,7 +130,6 @@ session_start();
 
             <p class="don-t-have-an">
               <span class="span">Already have an account?</span>
-              <span class="text-wrapper-9">&nbsp;</span>
               <a href="login.php" class="text-wrapper-10">Login</a>
             </p>
 
@@ -141,5 +158,27 @@ session_start();
       </div>
     </div>
   </div>
+
+  <?php if (isset($_SESSION['error'])) : ?>
+  <div class="popup">
+    <p><?php echo $_SESSION['error']; ?></p>
+    <button onclick="closePopup()">Close</button>
+  </div>
+  <?php unset($_SESSION['error']); ?>
+<?php endif; ?>
+
+<?php if (isset($_SESSION['success'])) : ?>
+  <div class="popup">
+    <p><?php echo $_SESSION['success']; ?></p>
+    <button onclick="closePopup()">Close</button>
+  </div>
+  <?php unset($_SESSION['success']); ?>
+<?php endif; ?>
+
+<script>
+  function closePopup() {
+    document.querySelectorAll('.popup').forEach(popup => popup.style.display = 'none');
+  }
+  </script>
 </body>
 </html>

@@ -63,7 +63,7 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
         }
     }
 
-    header("Location: transactions.php");
+    header("Location: expenseTracker.php");
     exit();
 }
 ?>

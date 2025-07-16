@@ -1,0 +1,201 @@
+*{margin:0;padding:0;box-sizing:border-box}
+
+
+body {
+    font-family: sans-serif;
+    margin: 0;
+    background-color: #5D5BDB;
+    color:#ffffff;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    overflow-x:hidden
+}
+
+.app-layout{display:flex;flex-grow: 1;}
+
+/* 右侧内容区 */
+.content-area{flex:1;display:flex;flex-direction:column;}
+
+/* Top Bar */
+.top-bar{display:flex;align-items:center;gap:15px;margin-bottom:20px}
+.back-arrow{font-size:24px;cursor:pointer}
+.top-bar h2{font-size:24px;font-weight:600}
+
+/* 可编辑 Monthly Income 外观与之前完全一致 */
+.income-box{
+  width:400px;height:70px;
+  background:#09004e;border-radius:12px;
+  display:flex;align-items:center;justify-content:center;
+  font-size:22px;margin-bottom:50px;
+  gap:8px;  /* 数字和 RM 间隔 */
+}
+.income-box input{
+  background:transparent;
+  border:none;
+  color:#fff;
+  font-weight:bold;
+  font-size:22px;
+  text-align:right;
+  width:120px;  /* 可根据需要调整 */
+  outline:none;
+}
+.income-box .rm{font-size:16px;opacity:.8}
+
+/* 滑块区域 */
+.budget-body{display:flex;align-items:flex-start;gap:50px}
+.sliders{flex:1;max-width:450px}
+.slider-group{margin-bottom:60px}
+.slider-group label{display:flex;justify-content:space-between;font-size:20px;margin-bottom:8px}
+input[type=range]{-webkit-appearance:none;width:100%;height:8px;border-radius:4px;background:#fff;color:currentColor}
+input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:20px;height:20px;border-radius:50%;background:currentColor;cursor:pointer;margin-top:-6px}
+input[type=range]::-moz-range-thumb{width:20px;height:20px;border-radius:50%;background:currentColor;cursor:pointer}
+
+/* 环形图容器固定 500×500，水平垂直居中 */
+.chart-area{width:500px;height:500px;display:flex;align-items:center;justify-content:center;position:relative}
+.chart-area canvas{position:absolute!important;top:-100px!important;left:200px!important}
+
+
+
+.container {
+    display: flex;
+    flex-grow: 1;
+}
+
+.sidebar {
+    width: 300px;
+    background-color: #FFFFFF;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-right: 1px solid #eee; /* Added for separation */
+}
+
+.sidebar .logo {
+    margin-bottom: 40px;
+}
+
+.sidebar .logo img {
+    width: 200px;
+}
+
+.sidebar .navigation {
+    width: 100%;
+}
+
+.sidebar .navigation ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.sidebar .navigation li {
+    margin-bottom: 55px;
+}
+
+.sidebar .navigation .nav-item {
+    display: block;
+    padding: 10px 20px;
+    text-decoration: none;
+    color: #000; /* Default text color */
+    font-weight: bold;
+    border-radius: 50px;
+    transition: background-color 0.3s;
+}
+
+.sidebar .navigation .nav-item:hover {
+    background-color: #e0e0e0;
+}
+
+.sidebar .navigation .nav-item.active {
+    background-color: #5D5BD8;
+    color: #FFF;
+}
+
+.sidebar .add-button {
+    margin-top: auto; /* Pushes the button to the bottom */
+    margin-bottom: 20px;
+    cursor: pointer;
+}
+
+.sidebar .add-button img {
+    width: 60px;
+    height: 60px;
+}
+
+.main-content {
+    flex-grow: 1;
+    padding: 40px;
+    background-color: #5D5BD8; /* Lighter shade for main content background */
+}
+
+.header {
+    margin-bottom: 30px;
+}
+
+.header h1 {
+    font-size: 30px;
+    color: #333;
+    margin: 0;
+}
+
+
+.footer {
+    background-color: #C6C6FF;
+    padding: 20px 40px;
+    color: #000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap; /* Allow footer content to wrap */
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.email-subscribe {
+    flex-basis: 30%; /* Adjust width as needed */
+    text-align: left;
+    color:#6666CC;
+}
+
+.email-subscribe p {
+    margin: 5px 0;
+    font-size: 14px;
+}
+
+.email-subscribe input {
+    padding: 8px;
+    border: none;
+    border-radius: 34px;
+    margin-top: 10px;
+    width: 80%;
+}
+
+.footer-logo {
+    flex-basis: 30%; /* Adjust width as needed */
+    text-align: center;
+}
+
+.footer-logo img {
+    width: 200px;
+}
+
+.copyright {
+    flex-basis: 30%; /* Adjust width as needed */
+    text-align: right;
+    font-size: 12px;
+}
+
+.box {
+    background-color: #ffffff;
+    border-radius: 20px;
+    width: 100%; /* Adjust width for three cards in a row */
+    height: 70px;
+    flex-direction: column;
+}
