@@ -69,21 +69,21 @@ chart.render();
             </div>
             <nav class="navigation">
                 <ul>
-                    <li><a href="#" class="nav-item">Home page</a></li>
-                    <li><a href="#" class="nav-item">Budget Planner</a></li>
-                    <li><a href="#" class="nav-item">Expense tracker</a></li>
+                    <li><a href="../homepage.php" class="nav-item">Home page</a></li>
+                    <li><a href="../budgetPlanner.php" class="nav-item">Budget Planner</a></li>
+                    <li><a href="../expenseTracker.php" class="nav-item">Expense tracker</a></li>
                     <li><a href="./" class="nav-item active">Financial Health Summary</a></li>
                     <li><a href="../Smart_Suggestion/" class="nav-item">Smart Suggestion</a></li>
                     <li><a href="../Saving_Goals/" class="nav-item">Saving Goals</a></li>
                 </ul>
             </nav>
             <div class="add-button">
-                <img src="Image/Vector.png" alt="Add">
+                <a href="../inputTransactionPage.php"><img src="Image/Vector.png" alt="Add"></a>
             </div>
-        
+                    </aside>
 
         <main class="main-content">
-            </aside>
+
             <header class="header">
             </header>
 

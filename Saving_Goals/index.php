@@ -22,9 +22,9 @@ if(!isset($_SESSION['user_id']) || !isset($_SESSION['email']) || !isset($_SESSIO
             </div>
             <nav class="navigation">
                 <ul>
-                    <li><a href="#" class="nav-item">Home page</a></li>
-                    <li><a href="#" class="nav-item">Budget Planner</a></li>
-                    <li><a href="#" class="nav-item">Expense tracker</a></li>
+                    <li><a href="../homepage.php" class="nav-item">Home page</a></li>
+                    <li><a href="../budgetPlanner.php" class="nav-item">Budget Planner</a></li>
+                    <li><a href="../expenseTracker.php" class="nav-item">Expense tracker</a></li>
                     <li><a href="../Financial_Summary/" class="nav-item">Financial Health Summary</a></li>
                     <li><a href="../Smart_Suggestion/" class="nav-item">Smart Suggestion</a></li>
                     <li><a href="./" class="nav-item active">Saving Goals</a></li>
@@ -32,7 +32,7 @@ if(!isset($_SESSION['user_id']) || !isset($_SESSION['email']) || !isset($_SESSIO
             </nav>
             
             <div class="add-button">
-                <img src="Image/Vector.png" alt="Add">
+                <a href="../inputTransactionPage.php"><img src="Image/Vector.png" alt="Add"></a>
             </div>
         <main class="main-content">
             </aside>

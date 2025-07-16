@@ -76,9 +76,9 @@ while($row = $result->fetch_assoc()){
                   <li><a href="homepage.php" class="nav-item">Home page</a></li>
                   <li><a href="budgetplanner.php" class="nav-item">Budget Planner</a></li>
                   <li><a href="expenseTracker.php" class="nav-item">Expense tracker</a></li>
-                  <li><a href="FinancialHealthSummary.html" class="nav-item">Financial Health Summary</a></li>
-                  <li><a href="SmartSuggestion.php" class="nav-item">Smart Suggestion</a></li>
-                  <li><a href="SavingGoals.html" class="nav-item">Saving Goals</a></li>
+                    <li><a href="Financial_Summary/" class="nav-item">Financial Health Summary</a></li>
+                    <li><a href="Smart_Suggestion/" class="nav-item">Smart Suggestion</a></li>
+                    <li><a href="Saving_Goals/" class="nav-item">Saving Goals</a></li>
               </ul>
             </nav>
             <div class="add-button">
