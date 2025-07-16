@@ -17,7 +17,7 @@ session_start();
       <div class="overlap">
         <div class="overlap-group">
           <div class="div">
-            <form action="dashboard.php">
+            <form action="homepage.php">
               <div class="rectangle-2"></div>
 
                 <script src="https://unpkg.com/@lottiefiles/dotlottie-wc@0.6.2/dist/dotlottie-wc.js" type="module"></script>
