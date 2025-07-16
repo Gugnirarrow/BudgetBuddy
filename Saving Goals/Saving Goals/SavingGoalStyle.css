@@ -1,0 +1,372 @@
+body {
+    font-family: sans-serif;
+    margin: 0;
+    background-color: #FFFFFF;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.container {
+    display: flex;
+    flex-grow: 1;
+}
+
+.sidebar {
+    width: 300px;
+    background-color: #FFFFFF;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-right: 1px solid #eee;
+}
+
+.sidebar .logo {
+    margin-bottom: 40px;
+}
+
+.sidebar .logo img {
+    width: 200px;
+}
+
+.sidebar .navigation {
+    width: 100%;
+}
+
+.sidebar .navigation ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.sidebar .navigation li {
+    margin-bottom: 55px;
+}
+
+.sidebar .navigation .nav-item {
+    display: block;
+    padding: 10px 20px;
+    text-decoration: none;
+    color: #000;
+    font-weight: bold;
+    border-radius: 50px;
+    transition: background-color 0.3s;
+}
+
+.sidebar .navigation .nav-item:hover {
+    background-color: #e0e0e0;
+}
+
+.sidebar .navigation .nav-item.active {
+    background-color: #5D5BD8;
+    color: #FFF;
+    width: 100%;
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+
+.sidebar .add-button {
+    margin-top: auto;
+    margin-bottom: 20px;
+    cursor: pointer;
+}
+
+.sidebar .add-button img {
+    width: 60px;
+    height: 60px;
+}
+
+.main-content {
+    flex-grow: 1;
+    padding: 40px;
+    background-color: #F8F8FF;
+}
+
+.header {
+    margin-bottom: 30px;
+}
+
+.header h1 {
+    font-size: 30px;
+    color: #333;
+    margin: 0;
+}
+
+.saving-goals-section {
+    background-color: #5D5BD8;
+    border-radius: 33px;
+    padding: 30px;
+    color: #FFF;
+    position: relative;
+    padding-bottom: 60px; /* Space for the "Add Goals" button */
+}
+
+.saving-goals-section h2 {
+    font-size: 28px;
+    margin-bottom: 10px;
+    text-align: left;
+}
+
+.saving-goals-section .current-goals {
+    font-size: 18px;
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.add-goals-button {
+    position: absolute;
+    top: 30px;
+    right: 30px;
+    background-color: #C6C6FF;
+    color: #01005D;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.goal-cards {
+    display: flex;
+    justify-content: space-around;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-top: 30px;
+}
+
+.goal-card {
+    background-color: #01005D;
+    border-radius: 35px;
+    padding: 25px;
+    width: 30%; /* Adjust width for three cards in a row */
+    min-width: 280px; /* Minimum width to prevent too small cards */
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    position: relative;
+}
+
+.goal-card .card-number {
+    position: absolute;
+    top: 15px;
+    left: 20px;
+    font-size: 14px;
+    color: #C6C6FF;
+}
+
+.goal-card h3 {
+    font-size: 24px;
+    margin-top: 30px; /* Space for card number */
+    margin-bottom: 10px;
+}
+
+.goal-card p {
+    font-size: 16px;
+    margin: 5px 0;
+}
+
+.goal-card .progress-bar-container {
+    width: 100%;
+    background-color: #333;
+    border-radius: 5px;
+    height: 20px;
+    margin-top: 10px;
+    overflow: hidden;
+}
+
+.goal-card .progress-bar {
+    height: 100%;
+    background-color: #C6C6FF; /* Progress bar color */
+    color: #01005D;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 14px;
+    border-radius: 5px;
+}
+
+.goal-card .progress-tracking {
+    font-size: 14px;
+    margin-top: 15px;
+}
+
+.goal-card .progress-tracking-detail {
+    font-size: 12px;
+    color: #C6C6FF;
+    margin-top: 5px;
+}
+
+.goal-card .input-field {
+    width: calc(100% - 20px);
+    padding: 8px 10px;
+    margin-top: 5px;
+    margin-bottom: 10px;
+    border: 1px solid #C6C6FF;
+    border-radius: 5px;
+    background-color: rgba(255, 255, 255, 0.2); /* Slightly transparent input */
+    color: #FFF;
+}
+
+.goal-card .input-field::placeholder {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.goal-card .saved-so-far-input {
+    display: flex;
+    align-items: center;
+    margin-top: 5px;
+    margin-bottom: 10px;
+}
+
+.goal-card .saved-percentage {
+    background-color: rgba(255, 255, 255, 0.2);
+    padding: 5px 10px;
+    border-radius: 5px;
+    margin-left: 5px;
+}
+
+.goal-card .card-actions {
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-around;
+}
+
+.goal-card .card-actions button {
+    background-color: #C6C6FF;
+    color: #01005D;
+    padding: 8px 15px;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s;
+}
+
+.goal-card .card-actions button:hover {
+    background-color: #a0a0ff;
+}
+
+.goal-card .monthly-tracking {
+    font-size: 12px;
+    margin-top: 15px;
+    text-align: right;
+    color: #C6C6FF;
+}
+
+.footer {
+    background-color: #C6C6FF;
+    padding: 20px 40px;
+    color: #000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-top: auto; /* Push footer to the bottom */
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.email-subscribe {
+    flex-basis: 30%;
+    text-align: left;
+    color:#6666CC;
+}
+
+.email-subscribe p {
+    margin: 5px 0;
+    font-size: 14px;
+}
+
+.email-subscribe input {
+    padding: 8px;
+    border: none;
+    border-radius: 34px;
+    margin-top: 10px;
+    width: 80%;
+}
+
+.footer-logo {
+    flex-basis: 30%;
+    text-align: center;
+}
+
+.footer-logo img {
+    width: 200px;
+}
+
+.copyright {
+    flex-basis: 30%;
+    text-align: right;
+    font-size: 12px;
+}
+
+@media (max-width: 1200px) {
+    .goal-card {
+        width: 45%;
+    }
+}
+
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+    }
+
+    .sidebar {
+        width: 100%;
+        flex-direction: row;
+        justify-content: space-around;
+        padding: 10px;
+        border-right: none;
+        border-bottom: 1px solid #eee;
+    }
+
+    .sidebar .logo {
+        margin-bottom: 0;
+    }
+
+    .sidebar .navigation {
+        display: none;
+    }
+
+    .sidebar .add-button {
+        margin-top: 0;
+        margin-bottom: 0;
+    }
+
+    .main-content {
+        padding: 20px;
+    }
+
+    .add-goals-button {
+        position: static;
+        margin-top: 20px;
+        margin-bottom: 20px;
+        width: 100%;
+    }
+
+    .goal-card {
+        width: 90%;
+    }
+
+    .footer-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .email-subscribe,
+    .footer-logo,
+    .copyright {
+        flex-basis: 100%;
+        margin-bottom: 10px;
+        text-align: center;
+    }
+}

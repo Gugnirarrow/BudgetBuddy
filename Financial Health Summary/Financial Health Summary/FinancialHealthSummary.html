@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BudgetBuddy - Financial Health Summary</title>
+    <link rel="stylesheet" href="FHSStyle.css">
+</head>
+<body>
+    <div class="container">
+        <aside class="sidebar">
+            <div class="logo">
+                <img src="/Users/amirahali/Documents/SEM 6/Financial Health Summary/Image/Group 43.png" alt="BudgetBuddy Logo">
+            </div>
+            <nav class="navigation">
+                <ul>
+                    <li><a href="#" class="nav-item">Home page</a></li>
+                    <li><a href="#" class="nav-item">Budget Planner</a></li>
+                    <li><a href="#" class="nav-item">Expense tracker</a></li>
+                    <li><a href="financial_health_summary.html" class="nav-item active">Financial Health Summary</a></li>
+                    <li><a href="smart_suggestion.html" class="nav-item">Smart Suggestion</a></li>
+                    <li><a href="saving_goals.html" class="nav-item">Saving Goals</a></li>
+                </ul>
+            </nav>
+            <div class="add-button">
+                <img src="/Users/amirahali/Documents/SEM 6/Financial Health Summary/Image/Vector.png" alt="Add">
+            </div>
+        </aside>
+
+        <main class="main-content">
+            <header class="header">
+            </header>
+
+            <section class="financial-summary-section">
+                <h2>Your Financial Snapshot</h2>
+                <div class="summary-content">
+                    <div class="remaining-budget">
+                        <h3>Remaining Budget</h3>
+                        <p class="amount">RM 500</p>
+                    </div>
+                    <div class="overspending-alerts">
+                        <h3>Overspending Alerts</h3>
+                        <ul>
+                            <li><span class="alert-indicator red"></span> Food</li>
+                            <li><span class="alert-indicator yellow"></span> Transport</li>
+                            <li><span class="alert-indicator green"></span> Entertainment</li>
+                        </ul>
+                    </div>
+                </div>
+                <p class="budget-spent-info">You have spent 80% of your food budget this week.</p>
+
+                <div class="chart-area">
+                    <div class="pie-chart-container">
+                        <img src="/Users/amirahali/Documents/SEM 6/Financial Health Summary/Image/Pie chart.png" alt="Pie chart of expenses">
+                        <div class="chart-labels">
+                            <span class="label food">Food</span>
+                            <span class="label transport">Transport</span>
+                            <span class="label rent">Rent</span>
+                            <span class="label entertainment">Entertainment</span>
+                        </div>
+                    </div>
+                    <div class="time-filters">
+                        <button class="filter-button active">Daily</button>
+                        <button class="filter-button">Weekly</button>
+                        <button class="filter-button">Monthly</button>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="email-subscribe">
+                <p>Want to know more?</p>
+                <p>Subscribe to our mail and receive updates on our courses!</p>
+                <input type="email" placeholder="Email address">
+            </div>
+            <div class="footer-logo">
+                <img src="/Users/amirahali/Documents/SEM 6/Financial Health Summary/Image/Group 43.png" alt="BudgetBuddy Logo">
+            </div>
+            <p class="copyright">Copyright © 2025 Budget Buddy Company. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="FHS.js"></script>
+</body>
+</html>
