@@ -10,20 +10,20 @@
     <div class="container">
         <aside class="sidebar">
             <div class="logo">
-                <img src="/Users/amirahali/Documents/SEM 6/Smart Suggestion/Image /Group 43.png" alt="BudgetBuddy Logo">
+                <img src="Image /Group 43.png" alt="BudgetBuddy Logo">
             </div>
             <nav class="navigation">
                 <ul>
                     <li><a href="#" class="nav-item">Home page</a></li>
                     <li><a href="#" class="nav-item">Budget Planner</a></li>
                     <li><a href="#" class="nav-item">Expense tracker</a></li>
-                    <li><a href="FinancialHealthSummary.html" class="nav-item">Financial Health Summary</a></li>
-                    <li><a href="SmartSuggestion.html" class="nav-item active">Smart Suggestion</a></li>
-                    <li><a href="SavingGoals.html" class="nav-item">Saving Goals</a></li>
+                    <li><a href="../Financial_Summary/" class="nav-item">Financial Health Summary</a></li>
+                    <li><a href="./" class="nav-item active">Smart Suggestion</a></li>
+                    <li><a href="../Saving_Goals/" class="nav-item">Saving Goals</a></li>
                 </ul>
             </nav>
             <div class="add-button">
-                <img src="/Users/amirahali/Documents/SEM 6/Smart Suggestion/Image /Vector.png" alt="Add">
+                <img src="Image /Vector.png" alt="Add">
             </div>
         </aside>
 
@@ -35,17 +35,17 @@
                 <h2>Smart Tips For Your Budget!</h2>
                 <div class="tip-cards">
                     <div class="card">
-                        <img src="/Users/amirahali/Documents/SEM 6/Smart Suggestion/Image /directions_bus.png" alt="Bus icon">
+                        <img src="'Image /directions_bus.png" alt="Bus icon">
                         <h3>Transportation Tips</h3>
                         <p>Use student transport cards to reduce costs.</p>
                     </div>
                     <div class="card">
-                        <img src="/Users/amirahali/Documents/SEM 6/Smart Suggestion/Image /%.png" alt="Percent icon">
+                        <img src="'Image /%.png" alt="Percent icon">
                         <h3>Campus Deals & Events</h3>
                         <p>Suggest free university events or campus deals.</p>
                     </div>
                     <div class="card">
-                        <img src="/Users/amirahali/Documents/SEM 6/Smart Suggestion/Image /Shopping bag.png" alt="Shopping bag icon">
+                        <img src="'Image /Shopping bag.png" alt="Shopping bag icon">
                         <h3>Cheaper Alternatives</h3>
                         <p>Recommend a cheaper alternatives for recurring expenses (e.g., specific eateries, study materials).</p>
                     </div>
@@ -64,7 +64,7 @@
                 <input type="email" placeholder="Email address">
             </div>
             <div class="footer-logo">
-                <img src="/Users/amirahali/Documents/SEM 6/Smart Suggestion/Image /Group 43.png" alt="BudgetBuddy Logo">
+                <img src="Image /Group 43.png" alt="BudgetBuddy Logo">
             </div>
             <p class="copyright">Copyright © 2025 Budget Buddy Company. All rights reserved.</p>
         </div>

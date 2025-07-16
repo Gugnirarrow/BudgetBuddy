@@ -4,16 +4,13 @@ document.addEventListener('DOMContentLoaded', () => {
     console.log("Saving Goals page loaded.");
 
     // --- Functionality for "Add Goals" button ---
-    const addGoalsButton = document.querySelector('.add-goals-button');
-    if (addGoalsButton) {
-        addGoalsButton.addEventListener('click', () => {
-            alert('Add Goals button clicked! (In a real app, this would open a form or add a new goal card)');
-            // In a real application, you would likely:
-            // 1. Open a modal/form for entering new goal details.
-            // 2. Dynamically create a new goal card based on user input.
-            // 3. Potentially send the new goal data to a server.
-        });
-    }
+    // const addGoalsButton = document.querySelector('.add-goals-button');
+    // if (addGoalsButton) {
+    //     addGoalsButton.addEventListener('click', () => {
+    //         alert('Add Goals button clicked! (In a real app, this would open a form or add a new goal card)');
+    //         window.location.href="add_form.php";
+    //     });
+    // }
 
     // --- Functionality for "Edit" buttons ---
     // Event delegation is often better for dynamically added elements,
@@ -37,9 +34,12 @@ document.addEventListener('DOMContentLoaded', () => {
         button.addEventListener('click', (event) => {
             const goalCard = event.target.closest('.goal-card');
             const goalTitle = goalCard.querySelector('h3').textContent;
-            if (confirm(`Are you sure you want to delete the goal: "${goalTitle}"?`)) {
-                goalCard.remove(); // Remove the goal card from the DOM
-                alert(`Goal "${goalTitle}" deleted.`);
+            const clickval = document.getElementById("click").value;
+            var goalid   = document.getElementById("goalid").value;
+            if (confirm(`Are you sure you want to delete the goal: "${goalTitle}"?`)) {          
+                
+                //goalCard.remove(); // Remove the goal card from the DOM
+                //alert(`Goal "${goalTitle}" deleted.`);
                 // In a real application, you would:
                 // 1. Send a request to a server to delete the goal data.
                 // 2. Handle the server's response (success/failure).
