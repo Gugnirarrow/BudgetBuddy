@@ -1,0 +1,412 @@
+body {
+    font-family: sans-serif;
+    margin: 0;
+    background-color: #FFFFFF;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.container {
+    display: flex;
+    flex-grow: 1;
+}
+
+.sidebar {
+    width: 300px;
+    background-color: #FFFFFF;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-right: 1px solid #eee;
+}
+
+.sidebar .logo {
+    margin-bottom: 40px;
+}
+
+.sidebar .logo img {
+    width: 200px;
+}
+
+.sidebar .navigation {
+    width: 100%;
+}
+
+.sidebar .navigation ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.sidebar .navigation li {
+    margin-bottom: 55px;
+}
+
+.sidebar .navigation .nav-item {
+    display: block;
+    padding: 10px 20px;
+    text-decoration: none;
+    color: #000;
+    font-weight: bold;
+    border-radius: 50px;
+    transition: background-color 0.3s;
+}
+
+.sidebar .navigation .nav-item:hover {
+    background-color: #e0e0e0;
+}
+
+.sidebar .navigation .nav-item.active {
+    background-color: #5D5BD8;
+    color: #FFF;
+    width: 100%;
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+
+.sidebar .add-button {
+    margin-top: auto;
+    margin-bottom: 20px;
+    cursor: pointer;
+}
+
+.sidebar .add-button img {
+    width: 60px;
+    height: 60px;
+}
+
+.main-content {
+    flex-grow: 1;
+    padding: 40px;
+    background-color: #F8F8FF;
+}
+
+.header {
+    margin-bottom: 30px;
+}
+
+.header h1 {
+    font-size: 30px;
+    color: #333;
+    margin: 0;
+}
+
+.financial-summary-section {
+    background-color: #5D5BD8;
+    border-radius: 33px;
+    padding: 30px;
+    color: #FFF;
+    /* text-align: left; */
+    position: relative;
+}
+
+.financial-summary-section h2 {
+    font-size: 28px;
+    margin-bottom: 20px;
+}
+
+.summary-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start; /* Align items to the top */
+    margin-bottom: 20px;
+}
+
+.remaining-budget {
+    background-color: #01005D; /* Darker blue for remaining budget box */
+    border-radius: 35px;
+    padding: 20px;
+    width: 45%;
+    text-align: center;
+}
+
+.remaining-budget h3 {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.remaining-budget .amount {
+    font-size: 40px;
+    font-weight: bold;
+    color: #C6C6FF;
+}
+
+.overspending-alerts {
+    background-color: #01005D;
+    border-radius: 35px;
+    padding: 20px;
+    width: 45%;
+}
+
+.overspending-alerts h3 {
+    font-size: 20px;
+    margin-bottom: 15px;
+}
+
+.overspending-alerts ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.overspending-alerts li {
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    font-size: 18px;
+}
+
+.alert-indicator {
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.alert-indicator.red {
+    background-color: red;
+}
+
+.alert-indicator.yellow {
+    background-color: yellow;
+}
+
+.alert-indicator.green {
+    background-color: green;
+}
+
+.budget-spent-info {
+    font-size: 16px;
+    margin-top: 10px;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.chart-area {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start; /* Align to top to match image */
+    margin-top: 30px;
+}
+
+.pie-chart-container {
+    position: relative;
+    width: 300px; /* Adjust size as needed */
+    height: 300px;
+    margin-right: 50px;
+}
+
+.pie-chart-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain; /* Ensure the entire image is visible */
+    align-items: center;
+}
+
+.chart-labels {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none; /* Allows clicks to pass through to elements behind */
+}
+
+.chart-labels .label {
+    position: absolute;
+    font-size: 16px;
+    font-weight: bold;
+    color: #FFF;
+    /* Positioning based on the wireframe */
+}
+
+.chart-labels .food {
+    top: 50px;
+    left: 170px;
+}
+
+.chart-labels .transport {
+    top: 100px;
+    left: 200px;
+}
+
+.chart-labels .rent {
+    top: 180px;
+    left: 100px;
+}
+
+.chart-labels .entertainment {
+    bottom: 50px;
+    left: 120px;
+}
+
+.time-filters {
+    background-color: #01005D;
+    border-radius: 10px;
+    padding: 15px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    height: 150px; /* Adjust height to match wireframe visual */
+}
+
+.time-filters .filter-button {
+    background-color: transparent;
+    border: none;
+    color: #FFF;
+    font-size: 18px;
+    padding: 8px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.time-filters .filter-button.active {
+    background-color: #C6C6FF;
+    color: #01005D;
+    font-weight: bold;
+}
+
+.time-filters .filter-button:hover:not(.active) {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+.footer {
+    background-color: #C6C6FF;
+    padding: 20px 40px;
+    color: #000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-top: auto;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.email-subscribe {
+    flex-basis: 30%;
+    text-align: left;
+}
+
+.email-subscribe p {
+    margin: 5px 0;
+    font-size: 14px;
+    color:#6666CC;
+}
+
+.email-subscribe input {
+    padding: 8px;
+    border: none;
+    border-radius: 34px;
+    margin-top: 10px;
+    width: 80%;
+}
+
+.footer-logo {
+    flex-basis: 30%;
+    text-align: center;
+}
+
+.footer-logo img {
+    width: 200px;
+}
+
+.copyright {
+    flex-basis: 30%;
+    text-align: right;
+    font-size: 12px;
+}
+
+@media (max-width: 1024px) {
+    .summary-content {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .remaining-budget,
+    .overspending-alerts {
+        width: 90%;
+        margin-bottom: 20px;
+    }
+
+    .chart-area {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .pie-chart-container {
+        margin-right: 0;
+        margin-bottom: 30px;
+    }
+
+    .time-filters {
+        flex-direction: row; /* Horizontal for smaller screens */
+        width: 90%;
+        height: auto;
+        padding: 10px;
+    }
+}
+
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+    }
+
+    .sidebar {
+        width: 100%;
+        flex-direction: row;
+        justify-content: space-around;
+        padding: 10px;
+        border-right: none;
+        border-bottom: 1px solid #eee;
+    }
+
+    .sidebar .logo {
+        margin-bottom: 0;
+    }
+
+    .sidebar .navigation {
+        display: none;
+    }
+
+    .sidebar .add-button {
+        margin-top: 0;
+        margin-bottom: 0;
+    }
+
+    .main-content {
+        padding: 20px;
+    }
+
+    .financial-summary-section {
+        padding: 20px;
+    }
+
+    .pie-chart-container {
+        width: 250px;
+        height: 250px;
+    }
+
+    .footer-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .email-subscribe,
+    .footer-logo,
+    .copyright {
+        flex-basis: 100%;
+        margin-bottom: 10px;
+        text-align: center;
+    }
+}

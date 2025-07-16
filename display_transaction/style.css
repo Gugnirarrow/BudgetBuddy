@@ -1,0 +1,15 @@
+.progress-container {
+    width: 100%;
+    background-color: #f3f3f3;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    overflow: hidden;
+}
+.progress-bar {
+    height: 20px;
+    /* width: <?php echo $progress; ?>%; */
+    background-color: #4caf50;
+    text-align: center;
+    color: white;
+    line-height: 20px;
+}
